@@ -5,4 +5,4 @@ import { DATABASE_URL } from '$env/static/private';
 
 const client = neon(DATABASE_URL);
 
-export const db = drizzle(client, { schema });
+export const db = drizzle(client, { schema, casing: 'snake_case' });

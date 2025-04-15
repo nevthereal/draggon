@@ -18,8 +18,8 @@ importers:
         specifier: ^1.3.19
         version: 1.3.19(svelte@5.26.2)
       drizzle-orm:
-        specifier: ^0.40.0
-        version: 0.40.1(@neondatabase/serverless@0.10.4)(@types/pg@8.11.6)(gel@2.0.2)(kysely@0.27.6)
+        specifier: 1.0.0-beta.1-5e64efc
+        version: 1.0.0-beta.1-5e64efc(@neondatabase/serverless@0.10.4)(@types/pg@8.11.6)(gel@2.0.2)(kysely@0.27.6)
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.5
@@ -52,8 +52,8 @@ importers:
         specifier: ^4.0.0
         version: 4.1.3(vite@6.2.6(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.2))
       drizzle-kit:
-        specifier: ^0.30.2
-        version: 0.30.6
+        specifier: 1.0.0-beta.1-5e64efc
+        version: 1.0.0-beta.1-5e64efc
       eslint:
         specifier: ^9.18.0
         version: 9.24.0(jiti@2.4.2)
@@ -1221,12 +1221,12 @@ packages:
   devalue@5.1.1:
     resolution: {integrity: sha512-maua5KUiapvEwiEAe+XnlZ3Rh0GD+qI1J/nb9vrJc3muPXvcF/8gXYTWF76+5DAqHyDUtOIImEuo0YKE9mshVw==}
 
-  drizzle-kit@0.30.6:
-    resolution: {integrity: sha512-U4wWit0fyZuGuP7iNmRleQyK2V8wCuv57vf5l3MnG4z4fzNTjY/U13M8owyQ5RavqvqxBifWORaR3wIUzlN64g==}
+  drizzle-kit@1.0.0-beta.1-5e64efc:
+    resolution: {integrity: sha512-IC4NBgdDXOQoQByuPGsS2HX5lnnIh5mPC5pG+PY5T92/BVwGjzOS8KKJPLjgBqWWwOmt42Ue0clUXt+N/S5YiA==}
     hasBin: true
 
-  drizzle-orm@0.40.1:
-    resolution: {integrity: sha512-aPNhtiJiPfm3qxz1czrnIDkfvkSdKGXYeZkpG55NPTVI186LmK2fBLMi4dsHpPHlJrZeQ92D322YFPHADBALew==}
+  drizzle-orm@1.0.0-beta.1-5e64efc:
+    resolution: {integrity: sha512-6e4PiYowRLZMcvo7OKoYNWu8WsBhwhjAq+LHE5NCQx5k3BLQKPhOdUpo/DErkzCZrfDHY6mFty76PYt0JfYl3Q==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
@@ -1244,7 +1244,7 @@ packages:
       '@types/sql.js': '*'
       '@vercel/postgres': '>=0.8.0'
       '@xata.io/client': '*'
-      better-sqlite3: '>=7'
+      better-sqlite3: '>=9.3.0'
       bun-types: '*'
       expo-sqlite: '>=14.0.0'
       gel: '>=2'
@@ -3185,7 +3185,7 @@ snapshots:
 
   devalue@5.1.1: {}
 
-  drizzle-kit@0.30.6:
+  drizzle-kit@1.0.0-beta.1-5e64efc:
     dependencies:
       '@drizzle-team/brocli': 0.10.2
       '@esbuild-kit/esm-loader': 2.6.5
@@ -3195,7 +3195,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.40.1(@neondatabase/serverless@0.10.4)(@types/pg@8.11.6)(gel@2.0.2)(kysely@0.27.6):
+  drizzle-orm@1.0.0-beta.1-5e64efc(@neondatabase/serverless@0.10.4)(@types/pg@8.11.6)(gel@2.0.2)(kysely@0.27.6):
     optionalDependencies:
       '@neondatabase/serverless': 0.10.4
       '@types/pg': 8.11.6
