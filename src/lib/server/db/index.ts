@@ -46,6 +46,16 @@ const relations = defineRelations(schema, (r) => {
 			assignee: r.one.user({
 				from: r.task.assigneeId,
 				to: r.user.id
+			}),
+			notes: r.many.note({
+				from: r.task.id,
+				to: r.note.taskId
+			})
+		},
+		note: {
+			task: r.one.task({
+				from: r.note.taskId,
+				to: r.task.id
 			})
 		}
 	};
