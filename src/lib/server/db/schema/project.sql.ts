@@ -24,6 +24,12 @@ export const task = pgTable('task', {
 		.notNull()
 		.references(() => status.id, { onDelete: 'cascade' }),
 	dueDate: timestamp(),
+	creatorId: uuid()
+		.notNull()
+		.references(() => user.id, { onDelete: 'cascade' }),
+	assigneeId: uuid()
+		.notNull()
+		.references(() => user.id, { onDelete: 'cascade' }),
 	createdAt: timestamp('created_at').notNull()
 });
 
