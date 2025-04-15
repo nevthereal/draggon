@@ -2,7 +2,7 @@ import { json, pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 import { user } from './auth.sql';
 
 export const project = pgTable('project', {
-	id: uuid().primaryKey(),
+	id: uuid().primaryKey().defaultRandom(),
 	name: text().notNull(),
 	ownerId: text()
 		.notNull()
@@ -10,17 +10,17 @@ export const project = pgTable('project', {
 });
 
 export const status = pgTable('status', {
-	id: uuid().primaryKey(),
+	id: uuid().primaryKey().defaultRandom(),
 	name: text().notNull(),
-	projectId: text()
+	projectId: uuid()
 		.notNull()
 		.references(() => project.id, { onDelete: 'cascade' })
 });
 
 export const task = pgTable('task', {
-	id: uuid().primaryKey(),
+	id: uuid().primaryKey().defaultRandom(),
 	name: text().notNull(),
-	statusId: text()
+	statusId: uuid()
 		.notNull()
 		.references(() => status.id, { onDelete: 'cascade' }),
 	dueDate: timestamp(),
@@ -28,9 +28,9 @@ export const task = pgTable('task', {
 });
 
 export const note = pgTable('note', {
-	id: uuid().primaryKey(),
+	id: uuid().primaryKey().defaultRandom(),
 	content: json().notNull(),
-	taskId: text()
+	taskId: uuid()
 		.notNull()
 		.references(() => task.id, { onDelete: 'cascade' })
 });
