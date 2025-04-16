@@ -49,7 +49,9 @@
 		"@nevthereal/random-utils": "^1.0.11",
 		"better-auth": "^1.2.7",
 		"bits-ui": "^1.3.19",
-		"drizzle-orm": "1.0.0-beta.1-5e64efc"
+		"drizzle-orm": "1.0.0-beta.1-5e64efc",
+		"lucide-svelte": "^0.488.0",
+		"tailwindcss-animate": "^1.0.7"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
