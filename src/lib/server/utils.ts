@@ -4,9 +4,14 @@ import { redirect } from '@sveltejs/kit';
 export const getUser = () => {
 	const { locals } = getRequestEvent();
 
-	if (!locals.user) {
+	return locals.user;
+};
+
+export const requireUser = () => {
+	const user = getUser();
+	if (!user) {
 		throw redirect(302, '/login');
 	}
 
-	return locals.user;
+	return user;
 };

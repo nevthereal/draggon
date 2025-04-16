@@ -1,9 +1,9 @@
-import { getUser } from '$lib/server/utils';
+import { requireUser } from '$lib/server/utils';
 import type { PageServerLoad } from './$types';
 import { db } from '$lib/server/db';
 
 export const load: PageServerLoad = async () => {
-	const user = getUser();
+	const user = requireUser();
 
 	const projects = await db.query.project.findMany({
 		where: {
