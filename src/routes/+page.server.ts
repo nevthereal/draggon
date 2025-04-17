@@ -5,14 +5,16 @@ import { db } from '$lib/server/db';
 export const load: PageServerLoad = async () => {
 	const user = requireUser();
 
-	const projects = await db.query.project.findMany({
+	const pinnedProjects = await db.query.project.findMany({
 		where: {
-			ownerId: user.id
+			ownerId: user.id,
+			pinned: true,
+			archived: false
 		}
 	});
 
 	return {
 		user,
-		projects
+		projects: pinnedProjects
 	};
 };

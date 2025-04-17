@@ -1,4 +1,4 @@
-import { json, pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
+import { boolean, json, pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 import { user } from './auth.sql';
 
 export const project = pgTable('project', {
@@ -6,7 +6,10 @@ export const project = pgTable('project', {
 	name: text().notNull(),
 	ownerId: text()
 		.notNull()
-		.references(() => user.id, { onDelete: 'cascade' })
+		.references(() => user.id, { onDelete: 'cascade' }),
+	pinned: boolean().notNull().default(false),
+	archived: boolean().notNull().default(false),
+	createdAt: timestamp().notNull().defaultNow()
 });
 
 export const status = pgTable('status', {
