@@ -17,7 +17,8 @@ export const status = pgTable('status', {
 	name: text().notNull(),
 	projectId: uuid()
 		.notNull()
-		.references(() => project.id, { onDelete: 'cascade' })
+		.references(() => project.id, { onDelete: 'cascade' }),
+	color: text().notNull()
 });
 
 export const task = pgTable('task', {
